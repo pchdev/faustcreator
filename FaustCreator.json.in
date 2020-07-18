@@ -1,0 +1,11 @@
+{
+    \"Name\" : \"FaustCreator\",
+    \"Version\" : \"0.0.1\",
+    \"CompatVersion\" : \"0.0.1\",
+    \"Vendor\" : \"GRAME-CNCM\",
+    \"Copyright\" : \"(C) GRAME-CNCM\",
+    \"License\" : \"Put short license information here\",
+    \"Description\" : \"Put a short description of your plugin here\",
+    \"Url\" : \"https://www.grame.fr\",
+    $$dependencyList
+}
