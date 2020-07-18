@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+
+<language name= "Faust" version="1" kateversion="2.4" section="Sources" extensions="*.dsp;*.lib" mimetype="text/x-faust" author="pchdev (pierre@wpn214.com)" license="MIT">
+    <highlighting>
+      <list name="primitives">
+        <item>waveform</item>
+        <item>soundfile</item>
+        <item>int</item>
+        <item>float</item>
+        <item>acos</item>
+        <item>asin</item>
+        <item>atan</item>
+        <item>atan2</item>
+        <item>cos</item>
+        <item>sin</item>
+        <item>tan</item>
+        <item>exp</item>
+        <item>log</item>
+        <item>log10</item>
+        <item>pow</item>
+        <item>sqrt</item>
+        <item>abs</item>
+        <item>min</item>
+        <item>max</item>
+        <item>fmod</item>
+        <item>remainder</item>
+        <item>floor</item>
+        <item>ceil</item>
+        <item>rint</item>
+        <item>mem</item>
+        <item>'</item>
+        <item>@</item>
+        <item>rdtable</item>
+        <item>rwtable</item>
+        <item>select2</item>
+        <item>select3</item>
+        <item>button</item>
+        <item>checkbox</item>
+        <item>hslider</item>
+        <item>vslider</item>
+        <item>nentry</item>
+        <item>hgroup</item>
+        <item>vgroup</item>
+        <item>tgroup</item>
+        <item>vbargraph</item>
+        <item>hbargraph</item>
+        <item>attach</item>
+      </list>
+      <list name="expressions">
+        <item>process</item>
+        <item>par</item>
+        <item>seq</item>
+        <item>sum</item>
+        <item>prod</item>
+        <item>with</item>
+        <item>letrec</item>
+        <item>environment</item>
+        <item>library</item>
+        <item>component</item>
+        <item>ffunction</item>
+      </list>      
+      <list name="preprocessor">
+        <item>import</item>
+        <item>declare</item>
+        <item>name</item>
+        <item>version</item>
+      </list>
+      <contexts>
+        <context name="Normal" attribute="Normal" lineEndContext="#pop">
+            <keyword String="primitives" attribute="Primitive" context="#stay"/>
+            <keyword String="expressions" attribute="Expression" context="#stay"/>
+            <keyword String="preprocessor" attribute="Preprocessor" context="#stay"/>
+            <DetectChar char="&quot;" attribute="String" context="String"/>
+            <StringDetect String="//" attribute="Comment" context="singleLineComment"/>
+            <StringDetect String="/*" attribute="Comment" context="multiLineComment"/>
+            <RegExpr String="0'\\." attribute="Number" context="#stay"/>
+            <RegExpr String="0'." attribute="Number" context="#stay"/>
+            <RegExpr String="\d+(\.\d+)?([eE]([-+])?\d+)?" attribute="Number" context="#stay"/>
+            <DetectChar char=":" attribute="CompOperator" context="#stay"/>
+            <DetectChar char="!" attribute="CompOperator" context="#stay"/>
+            <DetectChar char="_" attribute="CompOperator" context="#stay"/>
+            <DetectChar char="~" attribute="CompOperator" context="#stay"/>
+         </context>
+         <context name="String" attribute="String" lineEndContext="#stay">
+            <DetectChar char="&quot;" attribute="String" context="#pop"/>
+         </context>
+         <context name="singleLineComment" attribute="Comment" lineEndContext="#pop"/>
+         <context name= "multiLineComment" attribute= "Comment" lineEndContext= "#stay">
+             <Detect2Chars char="*" char1="/" attribute="Comment" context="#pop" endRegion="Comment"/>
+         </context>
+         <context name="String" attribute="String" lineEndContext="#stay">
+             <DetectChar char="&quot;" attribute="String" context="#pop"/>
+         </context>
+      </contexts>
+    <itemDatas>
+        <itemData name="Normal" defStyleNum="dsNormal"/>
+        <itemData name="Metadata" defStyleNum="dsConstant"/>
+        <itemData name="Primitive" defStyleNum="dsDataType"/>
+        <itemData name="Expression" defStyleNum="dsKeyword"/>
+        <itemData name="Comment" defStyleNum="dsComment"/>
+        <itemData name="String" defStyleNum="dsString"/>
+        <itemData name="Number" defStyleNum="dsFloat"/>
+        <itemData name="Preprocessor" defStyleNum="dsPreprocessor"/>
+        <itemData name="CompOperator" defStyleNum="dsControlFlow"/>
+        <itemData name="Function" defStyleNum="dsFunction"/>
+        <itemData name="Variable" defStyleNum="dsVariable"/>
+    </itemDatas>
+    </highlighting>
+    <general>
+        <comments>
+            <comment name="singleLine" start="//"/>
+            <comment name="multiLine" start="/*" end="*/" region= "Comment"/>
+        </comments>
+        <keywords casesensitive="true"/>
+    </general>
+</language>
+
