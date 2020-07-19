@@ -2,21 +2,23 @@ DEFINES += FAUSTCREATOR_LIBRARY
 QT += svg
 # Faust2QtCreator files
 
+PROJECT_SOURCE_DIR = source
+
 SOURCES += \
-        faustcreator.cpp \
-        faustcreator-options.cpp \
-        faustcreator-output.cpp \
-        faustcreator-project.cpp \
-        faustcreator-build.cpp
+        $$PROJECT_SOURCE_DIR/faustcreator.cpp \
+        $$PROJECT_SOURCE_DIR/faustcreator-options.cpp \
+        $$PROJECT_SOURCE_DIR/faustcreator-output.cpp \
+        $$PROJECT_SOURCE_DIR/faustcreator-project.cpp \
+        $$PROJECT_SOURCE_DIR/faustcreator-build.cpp
 
 HEADERS += \
-        faustcreator.hpp \
-        faustcreator-global.hpp \
-        faustcreator-constants.hpp \
-        faustcreator-options.hpp \
-        faustcreator-output.hpp \
-        faustcreator-project.hpp \
-        faustcreator-build.hpp
+        $$PROJECT_SOURCE_DIR/faustcreator.hpp \
+        $$PROJECT_SOURCE_DIR/faustcreator-global.hpp \
+        $$PROJECT_SOURCE_DIR/faustcreator-constants.hpp \
+        $$PROJECT_SOURCE_DIR/faustcreator-options.hpp \
+        $$PROJECT_SOURCE_DIR/faustcreator-output.hpp \
+        $$PROJECT_SOURCE_DIR/faustcreator-project.hpp \
+        $$PROJECT_SOURCE_DIR/faustcreator-build.hpp
 
 DISTFILES += \
         .github/workflow/build_qmake.yml \
@@ -27,12 +29,12 @@ DISTFILES += \
 ## Either set the IDE_SOURCE_TREE when running qmake,
 ## or set the QTC_SOURCE environment variable, to override the default setting
 isEmpty(IDE_SOURCE_TREE): IDE_SOURCE_TREE = $$(QTC_SOURCE)
-isEmpty(IDE_SOURCE_TREE): IDE_SOURCE_TREE = "/home/wpn214/Repositories/qt-creator-4.12.1"
+isEmpty(IDE_SOURCE_TREE): IDE_SOURCE_TREE = "/home/wpn214/Repositories/grame/qt-creator-4.12.1"
 
 ## Either set the IDE_BUILD_TREE when running qmake,
 ## or set the QTC_BUILD environment variable, to override the default setting
 isEmpty(IDE_BUILD_TREE): IDE_BUILD_TREE = $$(QTC_BUILD)
-isEmpty(IDE_BUILD_TREE): IDE_BUILD_TREE = "/home/wpn214/Repositories/build-qtcreator-Qt_5_14_1_in_PATH_System-Debug"
+isEmpty(IDE_BUILD_TREE): IDE_BUILD_TREE = "/home/wpn214/Repositories/grame/build-qtcreator-Qt_5_14_1_in_PATH_System-Debug"
 
 ## uncomment to build plugin into user config directory
 ## <localappdata>/plugins/<ideversion>

@@ -158,7 +158,7 @@ void FaustPlugin::collectTargets()
             QString& target = m_targets.last();
             auto action = new QAction(target, this);
             Core::Command* cmd = Core::ActionManager::registerAction(action, target.toStdString().c_str(),
-                                                      Core::Context(Core::Constants::C_GLOBAL));
+                                       Core::Context(Core::Constants::C_GLOBAL));
             connect(action, &QAction::triggered, this, &FaustPlugin::triggerAction);
             ////    cmd->setDefaultKeySequence(QKeySequence(tr("Ctrl+Alt+Meta+A")));
             m_menu->addAction(cmd);
